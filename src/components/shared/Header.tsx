@@ -8,59 +8,90 @@ import { Menu, X } from 'lucide-react'
 const navLinks = [
   { name: 'Home', path: '/' },
   { name: 'Menu', path: '/menu' },
-  { name: 'Private Dining', path: '/private-dining' },
-  { name: 'About Us', path: '/about' },
+  { name: 'Reservations', path: '/reservations' },
+  { name: 'Loyaltable', path: '/loyaltable' },
 ]
 
 export default function Header() {
-  const [scrolled, setScrolled] = useState(false)
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [isScrolled, setIsScrolled] = useState(false)
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 50)
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20)
+    }
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
   return (
-    <header className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled ? 'bg-[#0A1128]/90 backdrop-blur-md py-4 shadow-lg' : 'bg-transparent py-6'}`}>
-      <div className="max-w-7xl mx-auto px-6 md:px-12 flex justify-between items-center">
-        {/* Logo */}
-        <Link href="/" className="text-2xl font-bold font-serif tracking-wide text-white">
-          MASAKALI<span className="text-[#7CFF01]">.</span>
-        </Link>
-
-        {/* Desktop Nav */}
-        <nav className="hidden md:flex gap-8 items-center">
-          {navLinks.map((link) => (
-            <Link key={link.name} href={link.path} className="text-sm font-semibold text-white/80 hover:text-[#7CFF01] transition-colors uppercase tracking-wider">
-              {link.name}
-            </Link>
-          ))}
-          <Link href="/reserve" className="px-6 py-2.5 rounded-full bg-[#7CFF01] text-[#0A1128] font-bold text-sm uppercase tracking-wider hover:bg-white transition-colors shadow-[0_0_15px_rgba(124,255,1,0.3)]">
-            Book a Table
+    <header 
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 px-4 sm:px-8 py-4 ${
+        isScrolled ? 'py-4' : 'py-6'
+      }`}
+    >
+      <div className={`max-w-7xl mx-auto rounded-full transition-all duration-300 ${isScrolled ? 'glass-floating' : 'bg-transparent'}`}>
+        <div className="flex items-center justify-between px-6 py-4">
+          
+          {/* Logo */}
+          <Link href="/" className="relative z-10 flex flex-col">
+            <span className="font-serif text-2xl font-bold tracking-widest text-[#064E3B] uppercase">Masakali</span>
+            <span className="text-[0.6rem] tracking-[0.2em] text-[#064E3B]/60 uppercase ml-1">London</span>
           </Link>
-        </nav>
 
-        {/* Mobile Toggle */}
-        <button className="md:hidden text-white" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
-          {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-        </button>
+          {/* Desktop Nav */}
+          <nav className="hidden md:flex items-center gap-8">
+            {navLinks.map((link) => (
+              <Link 
+                key={link.name} 
+                href={link.path}
+                className="text-sm font-bold tracking-wider uppercase text-[#064E3B]/80 hover:text-[#064E3B] transition-colors relative group"
+              >
+                {link.name}
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#7CFF01] transition-all group-hover:w-full"></span>
+              </Link>
+            ))}
+            <Link 
+              href="/reservations"
+              className="px-6 py-2.5 rounded-full bg-[#064E3B] text-white text-sm font-bold uppercase tracking-widest hover:bg-[#7CFF01] hover:text-[#064E3B] transition-all shadow-[0_4px_14px_rgba(6,78,59,0.3)] hover:shadow-[0_4px_20px_rgba(124,255,1,0.4)]"
+            >
+              Book Table
+            </Link>
+          </nav>
+
+          {/* Mobile Menu Toggle */}
+          <button 
+            className="md:hidden relative z-10 text-[#064E3B] p-2"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          >
+            {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          </button>
+        </div>
       </div>
 
-      {/* Mobile Nav */}
-      {mobileMenuOpen && (
+      {/* Mobile Nav Overlay */}
+      {isMobileMenuOpen && (
         <motion.div 
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="md:hidden absolute top-full left-0 w-full bg-[#0A1128] border-t border-white/10 p-6 flex flex-col gap-6"
+          exit={{ opacity: 0, y: -20 }}
+          className="absolute top-full left-4 right-4 mt-2 p-6 glass-floating rounded-2xl flex flex-col gap-6 md:hidden shadow-2xl"
         >
           {navLinks.map((link) => (
-            <Link key={link.name} href={link.path} onClick={() => setMobileMenuOpen(false)} className="text-lg font-semibold text-white hover:text-[#7CFF01] uppercase tracking-wider">
+            <Link 
+              key={link.name} 
+              href={link.path}
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="text-xl font-serif font-bold text-[#064E3B]"
+            >
               {link.name}
             </Link>
           ))}
-          <Link href="/reserve" onClick={() => setMobileMenuOpen(false)} className="w-full text-center py-3 rounded-full bg-[#7CFF01] text-[#0A1128] font-bold uppercase tracking-wider">
+          <Link 
+            href="/reservations"
+            onClick={() => setIsMobileMenuOpen(false)}
+            className="w-full text-center py-4 rounded-xl bg-[#064E3B] text-white font-bold uppercase tracking-widest mt-4"
+          >
             Book a Table
           </Link>
         </motion.div>

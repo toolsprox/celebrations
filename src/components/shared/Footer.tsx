@@ -1,85 +1,102 @@
 import Link from 'next/link'
-import { MapPin, Phone, Mail } from 'lucide-react'
+import { Instagram, MapPin, Phone, Mail } from 'lucide-react'
 
 export default function Footer() {
   return (
-    <footer className="bg-[#0A1128] border-t border-white/10 pt-20 pb-10">
-      <div className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+    <footer className="relative mt-24 glass-floating border-t border-white/50 py-16 px-6 sm:px-12 z-10 mx-4 sm:mx-8 mb-8 rounded-3xl">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
         
-        {/* Brand */}
-        <div className="md:col-span-1">
-          <Link href="/" className="text-3xl font-bold font-serif tracking-wide text-white mb-4 block">
-            MASAKALI<span className="text-[#7CFF01]">.</span>
-          </Link>
-          <p className="text-white/60 text-sm leading-relaxed mb-6">
-            Elevated Indian cuisine serving the vibrant flavors of the subcontinent in the heart of London.
-          </p>
-          <div className="flex gap-4">
-            <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white/80 hover:bg-[#7CFF01] hover:text-black transition-colors">
-              <span className="text-xs font-bold">IG</span>
-            </a>
-            <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white/80 hover:bg-[#7CFF01] hover:text-black transition-colors">
-              <span className="text-xs font-bold">FB</span>
-            </a>
+        {/* Brand Column */}
+        <div className="space-y-6 md:col-span-1">
+          <div className="flex flex-col">
+            <span className="font-serif text-3xl font-bold tracking-widest text-[#064E3B] uppercase">Masakali</span>
+            <span className="text-[0.65rem] tracking-[0.2em] text-[#064E3B]/60 uppercase ml-1">London</span>
           </div>
+          <p className="text-sm text-[#064E3B]/70 leading-relaxed max-w-xs">
+            A modern interpretation of pan-Indian cuisine, serving authentic flavors with contemporary elegance in the heart of London.
+          </p>
         </div>
 
-        {/* Quick Links */}
-        <div>
-          <h4 className="text-white font-bold uppercase tracking-wider mb-6 text-sm">Explore</h4>
-          <ul className="space-y-3">
-            {['Home', 'Menu', 'Private Dining', 'About Us', 'Reserve a Table'].map(link => (
-              <li key={link}>
-                <Link href={link === 'Home' ? '/' : `/${link.toLowerCase().replace(/ /g, '-')}`} className="text-white/60 hover:text-[#7CFF01] transition-colors text-sm">
-                  {link}
+        {/* Links Column */}
+        <div className="space-y-6">
+          <h4 className="text-xs font-bold tracking-widest text-[#064E3B] uppercase">Explore</h4>
+          <ul className="space-y-4">
+            {['Home', 'Menu', 'Reservations', 'Loyaltable', 'Private Dining'].map((item) => (
+              <li key={item}>
+                <Link href="#" className="text-sm text-[#064E3B]/70 hover:text-[#7CFF01] transition-colors relative inline-block group">
+                  {item}
+                  <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-[#7CFF01] transition-all group-hover:w-full"></span>
                 </Link>
               </li>
             ))}
           </ul>
         </div>
 
-        {/* Contact */}
-        <div>
-          <h4 className="text-white font-bold uppercase tracking-wider mb-6 text-sm">Contact Us</h4>
+        {/* Contact Column */}
+        <div className="space-y-6">
+          <h4 className="text-xs font-bold tracking-widest text-[#064E3B] uppercase">Contact</h4>
           <ul className="space-y-4">
-            <li className="flex items-start gap-3 text-white/60 text-sm">
-              <MapPin className="w-5 h-5 text-[#7CFF01] shrink-0" />
-              <span>48 Stanhope St<br/>London, NW1 3EX<br/>United Kingdom</span>
+            <li>
+              <a href="tel:+442071234567" className="flex items-center gap-3 text-sm text-[#064E3B]/70 hover:text-[#064E3B] transition-colors group">
+                <div className="p-2 rounded-full bg-white/50 group-hover:bg-[#7CFF01] transition-colors">
+                  <Phone className="w-4 h-4 text-[#064E3B]" />
+                </div>
+                +44 20 7123 4567
+              </a>
             </li>
-            <li className="flex items-center gap-3 text-white/60 text-sm">
-              <Phone className="w-4 h-4 text-[#7CFF01] shrink-0" />
-              <span>+44 207 419 9999</span>
+            <li>
+              <a href="mailto:reservations@masakali.co.uk" className="flex items-center gap-3 text-sm text-[#064E3B]/70 hover:text-[#064E3B] transition-colors group">
+                <div className="p-2 rounded-full bg-white/50 group-hover:bg-[#7CFF01] transition-colors">
+                  <Mail className="w-4 h-4 text-[#064E3B]" />
+                </div>
+                reservations@masakali.co.uk
+              </a>
             </li>
-            <li className="flex items-center gap-3 text-white/60 text-sm">
-              <Mail className="w-4 h-4 text-[#7CFF01] shrink-0" />
-              <span>reservations@masakali.co.uk</span>
+            <li>
+              <a href="#" className="flex items-start gap-3 text-sm text-[#064E3B]/70 hover:text-[#064E3B] transition-colors group">
+                <div className="p-2 rounded-full bg-white/50 group-hover:bg-[#7CFF01] transition-colors shrink-0">
+                  <MapPin className="w-4 h-4 text-[#064E3B]" />
+                </div>
+                <span className="leading-relaxed">15 Berkeley Square<br />Mayfair, London<br />W1J 6EG</span>
+              </a>
             </li>
           </ul>
         </div>
 
-        {/* Opening Hours */}
-        <div>
-          <h4 className="text-white font-bold uppercase tracking-wider mb-6 text-sm">Hours</h4>
-          <ul className="space-y-3 text-white/60 text-sm">
-            <li className="flex justify-between">
-              <span>Mon - Thu</span>
-              <span className="text-white">5:00 PM - 10:30 PM</span>
+        {/* Hours Column */}
+        <div className="space-y-6">
+          <h4 className="text-xs font-bold tracking-widest text-[#064E3B] uppercase">Hours</h4>
+          <ul className="space-y-3 text-sm text-[#064E3B]/70">
+            <li className="flex justify-between border-b border-black/5 pb-2">
+              <span>Mon - Wed</span>
+              <span className="font-medium text-[#064E3B]">12:00 - 23:00</span>
             </li>
-            <li className="flex justify-between">
-              <span>Fri - Sun</span>
-              <span className="text-white">12:00 PM - 11:00 PM</span>
+            <li className="flex justify-between border-b border-black/5 pb-2">
+              <span>Thu - Sat</span>
+              <span className="font-medium text-[#064E3B]">12:00 - 00:30</span>
+            </li>
+            <li className="flex justify-between pb-2">
+              <span>Sunday</span>
+              <span className="font-medium text-[#064E3B]">12:00 - 22:00</span>
             </li>
           </ul>
+          
+          <div className="pt-4 flex gap-4">
+            <a href="#" className="w-10 h-10 rounded-full bg-[#064E3B] text-white flex items-center justify-center hover:bg-[#7CFF01] hover:text-[#064E3B] hover:-translate-y-1 transition-all shadow-lg shadow-[#064E3B]/20">
+              <Instagram className="w-5 h-5" />
+            </a>
+          </div>
         </div>
+
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 md:px-12 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
-        <p className="text-white/40 text-xs text-center md:text-left">
+      <div className="max-w-7xl mx-auto mt-16 pt-8 border-t border-black/5 flex flex-col md:flex-row items-center justify-between gap-4">
+        <p className="text-xs text-[#064E3B]/50 tracking-widest uppercase">
           &copy; {new Date().getFullYear()} Masakali London. All rights reserved.
         </p>
-        <div className="flex gap-4 text-xs text-white/40">
-          <Link href="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
-          <Link href="/terms" className="hover:text-white transition-colors">Terms of Service</Link>
+        <div className="flex gap-6">
+          <Link href="#" className="text-xs text-[#064E3B]/50 hover:text-[#064E3B] tracking-widest uppercase transition-colors">Privacy</Link>
+          <Link href="#" className="text-xs text-[#064E3B]/50 hover:text-[#064E3B] tracking-widest uppercase transition-colors">Terms</Link>
         </div>
       </div>
     </footer>
