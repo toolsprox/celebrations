@@ -21,14 +21,11 @@ export default function Footer() {
         <div className="space-y-6">
           <h4 className="text-xs font-bold tracking-widest text-[#0F0F0F] uppercase">Explore</h4>
           <ul className="space-y-4">
-            {['Home', 'Menu', 'Reservations', 'Loyaltable', 'Private Dining'].map((item) => (
-              <li key={item}>
-                <Link href="#" className="text-sm text-[#0F0F0F]/70 hover:text-[#7CFF01] transition-colors relative inline-block group">
-                  {item}
-                  <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-[#7CFF01] transition-all group-hover:w-full"></span>
-                </Link>
-              </li>
-            ))}
+            <li><Link href="/" className="text-sm text-[#0F0F0F]/70 hover:text-[#7CFF01] transition-colors relative inline-block group">Home<span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-[#7CFF01] transition-all group-hover:w-full"></span></Link></li>
+            <li><Link href="/corporate" className="text-sm text-[#0F0F0F]/70 hover:text-[#7CFF01] transition-colors relative inline-block group">Corporate Dining<span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-[#7CFF01] transition-all group-hover:w-full"></span></Link></li>
+            <li><Link href="/students" className="text-sm text-[#0F0F0F]/70 hover:text-[#7CFF01] transition-colors relative inline-block group">Student Offers<span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-[#7CFF01] transition-all group-hover:w-full"></span></Link></li>
+            <li><Link href="/celebrations" className="text-sm text-[#0F0F0F]/70 hover:text-[#7CFF01] transition-colors relative inline-block group">Family & Celebrations<span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-[#7CFF01] transition-all group-hover:w-full"></span></Link></li>
+            <li><Link href="/locations/kings-cross" className="text-sm text-[#0F0F0F]/70 hover:text-[#7CFF01] transition-colors relative inline-block group">Kings Cross<span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-[#7CFF01] transition-all group-hover:w-full"></span></Link></li>
           </ul>
         </div>
 
