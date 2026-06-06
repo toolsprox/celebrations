@@ -2,17 +2,13 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
-import { motion, useScroll, useTransform } from 'framer-motion'
+import { motion } from 'framer-motion'
 import { CalendarHeart, ArrowRight, Users, Sparkles, Cake } from 'lucide-react'
-import { useRef } from 'react'
 
 export default function CelebrationsPage() {
-  const containerRef = useRef(null)
-  const { scrollYProgress } = useScroll({ target: containerRef, offset: ["start start", "end start"] })
-  const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"])
 
   return (
-    <main ref={containerRef} className="min-h-screen bg-[#F5F3EC] text-[#0F0F0F] relative overflow-hidden font-sans pt-32 pb-16">
+    <main className="min-h-screen bg-[#F5F3EC] text-[#0F0F0F] relative overflow-hidden font-sans pt-32 pb-16">
       
       {/* Decorative floating elements */}
       <motion.div animate={{ y: [0, -20, 0] }} transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }} className="absolute top-[20%] left-[10%] w-6 h-6 rounded-full bg-[#7CFF01]/30 blur-sm pointer-events-none" />
@@ -24,7 +20,6 @@ export default function CelebrationsPage() {
         
         {/* Left Column: Text & CTAs */}
         <motion.div 
-          style={{ y }}
           initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8, type: "spring" }}
           className="w-full md:w-[55%] flex flex-col justify-center text-left"
         >

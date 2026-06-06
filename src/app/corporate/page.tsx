@@ -2,15 +2,10 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
-import { motion, useScroll, useTransform } from 'framer-motion'
+import { motion } from 'framer-motion'
 import { Briefcase, ArrowRight, CheckCircle2, ShieldCheck, GlassWater } from 'lucide-react'
-import { useRef } from 'react'
 
 export default function CorporatePage() {
-  const containerRef = useRef(null)
-  const { scrollYProgress } = useScroll({ target: containerRef, offset: ["start start", "end start"] })
-  const y = useTransform(scrollYProgress, [0, 1], ["0%", "30%"])
-
   const listVariants = {
     hidden: { opacity: 0 },
     show: {
@@ -25,7 +20,7 @@ export default function CorporatePage() {
   }
 
   return (
-    <main ref={containerRef} className="min-h-screen bg-[#FDFBF7] text-[#0F0F0F] relative overflow-hidden font-sans pt-32 pb-16">
+    <main className="min-h-screen bg-[#FDFBF7] text-[#0F0F0F] relative overflow-hidden font-sans pt-32 pb-16">
       <motion.div 
         animate={{ scale: [1, 1.2, 1], rotate: [0, 90, 0] }}
         transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
@@ -36,7 +31,7 @@ export default function CorporatePage() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 pt-10">
         <div className="grid md:grid-cols-2 gap-16 items-center">
-          <motion.div style={{ y }}>
+          <motion.div>
             <motion.div 
               initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.5 }}
               className="inline-flex items-center space-x-2 bg-[#7CFF01]/10 text-[#5CB800] rounded-full px-5 py-2 mb-8 border border-[#7CFF01]/20 cursor-pointer"

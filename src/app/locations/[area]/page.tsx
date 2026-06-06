@@ -2,23 +2,14 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
-import { motion, useScroll, useTransform, Variants } from 'framer-motion'
+import { motion, Variants } from 'framer-motion'
 import { MapPin, ArrowRight, Star, Clock, ChefHat } from 'lucide-react'
 import { useParams } from 'next/navigation'
-import { useRef } from 'react'
 
 export default function LocationPage() {
   const params = useParams()
   const rawArea = params.area as string || 'London'
   const areaName = rawArea.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ')
-  
-  const containerRef = useRef(null)
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start start", "end start"]
-  })
-  const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"])
-  const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0])
 
   // Variants for staggered entrance
   const containerVariants: Variants = {
@@ -50,7 +41,6 @@ export default function LocationPage() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div 
-          style={{ y, opacity }}
           variants={containerVariants}
           initial="hidden"
           animate="show"

@@ -2,17 +2,13 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
-import { motion, useScroll, useTransform } from 'framer-motion'
+import { motion } from 'framer-motion'
 import { GraduationCap, ArrowRight, MapPin, Star, Clock, Zap } from 'lucide-react'
-import { useRef } from 'react'
 
 export default function StudentsPage() {
-  const containerRef = useRef(null)
-  const { scrollYProgress } = useScroll({ target: containerRef, offset: ["start start", "end start"] })
-  const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"])
 
   return (
-    <main ref={containerRef} className="min-h-screen bg-[#FDFBF7] text-[#0F0F0F] relative overflow-hidden font-sans pt-32 pb-16">
+    <main className="min-h-screen bg-[#FDFBF7] text-[#0F0F0F] relative overflow-hidden font-sans pt-32 pb-16">
       <motion.div 
         animate={{ scale: [1, 1.1, 1], rotate: [0, 90, 0] }}
         transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
@@ -24,7 +20,6 @@ export default function StudentsPage() {
         
         {/* Left Column: Text & CTAs */}
         <motion.div 
-          style={{ y }}
           initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8, type: "spring" }}
           className="w-full md:w-[55%] flex flex-col justify-center text-left"
         >
