@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { Instagram, MapPin, Phone, Mail } from 'lucide-react'
+import { MapPin, Phone, Mail } from 'lucide-react'
 
 export default function Footer() {
   return (
@@ -82,8 +82,8 @@ export default function Footer() {
           </ul>
           
           <div className="pt-4 flex gap-4">
-            <a href="#" className="w-10 h-10 rounded-full bg-[#064E3B] text-white flex items-center justify-center hover:bg-[#7CFF01] hover:text-[#064E3B] hover:-translate-y-1 transition-all shadow-lg shadow-[#064E3B]/20">
-              <Instagram className="w-5 h-5" />
+            <a href="#" className="w-10 h-10 rounded-full bg-[#064E3B] text-white font-bold flex items-center justify-center hover:bg-[#7CFF01] hover:text-[#064E3B] hover:-translate-y-1 transition-all shadow-lg shadow-[#064E3B]/20">
+              IG
             </a>
           </div>
         </div>
