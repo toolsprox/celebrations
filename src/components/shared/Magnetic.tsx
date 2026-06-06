@@ -8,7 +8,7 @@ interface MagneticProps {
   pullPower?: number
 }
 
-export default function Magnetic({ children, pullPower = 0.3 }: MagneticProps) {
+export default function Magnetic({ children, pullPower = 0.1 }: MagneticProps) {
   const ref = useRef<HTMLDivElement>(null)
   const [position, setPosition] = useState({ x: 0, y: 0 })
 
@@ -34,8 +34,8 @@ export default function Magnetic({ children, pullPower = 0.3 }: MagneticProps) {
       onMouseMove={handleMouse}
       onMouseLeave={reset}
       animate={{ x: position.x, y: position.y }}
-      transition={{ type: "spring", stiffness: 150, damping: 15, mass: 0.1 }}
-      className="inline-block"
+      transition={{ type: "spring", stiffness: 300, damping: 20, mass: 0.5 }}
+      className="inline-flex w-full sm:w-auto"
     >
       {children}
     </motion.div>

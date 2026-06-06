@@ -41,10 +41,10 @@ export default function CustomCursor() {
     <>
       {/* Main tiny dot that exactly follows cursor */}
       <motion.div
-        className="fixed top-0 left-0 w-2 h-2 bg-[#7CFF01] rounded-full mix-blend-difference pointer-events-none z-[100]"
+        className="fixed top-0 left-0 w-2.5 h-2.5 bg-[#0F0F0F] rounded-full pointer-events-none z-[100] shadow-md"
         animate={{
-          x: mousePosition.x - 4,
-          y: mousePosition.y - 4,
+          x: mousePosition.x - 5,
+          y: mousePosition.y - 5,
           scale: isHovering ? 0 : 1,
         }}
         transition={{ type: "tween", ease: "backOut", duration: 0.1 }}
@@ -52,12 +52,16 @@ export default function CustomCursor() {
       
       {/* Trailing larger circle that expands on hover */}
       <motion.div
-        className="fixed top-0 left-0 w-10 h-10 border border-[#7CFF01] rounded-full mix-blend-difference pointer-events-none z-[99] flex items-center justify-center"
+        className="fixed top-0 left-0 w-12 h-12 rounded-full pointer-events-none z-[99] flex items-center justify-center transition-colors"
+        style={{
+          border: isHovering ? '1px solid transparent' : '1px solid rgba(15, 15, 15, 0.2)',
+          backgroundColor: isHovering ? "rgba(124, 255, 1, 0.2)" : "transparent",
+          backdropFilter: isHovering ? "blur(4px)" : "none",
+        }}
         animate={{
-          x: mousePosition.x - 20,
-          y: mousePosition.y - 20,
+          x: mousePosition.x - 24,
+          y: mousePosition.y - 24,
           scale: isHovering ? 1.5 : 1,
-          backgroundColor: isHovering ? "rgba(124, 255, 1, 0.1)" : "transparent",
         }}
         transition={{ type: "spring", stiffness: 150, damping: 15, mass: 0.5 }}
       >
