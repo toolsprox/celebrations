@@ -3,6 +3,8 @@ import { Poppins } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/shared/Header";
 import Footer from "@/components/shared/Footer";
+import CustomCursor from "@/components/shared/CustomCursor";
+import Preloader from "@/components/shared/Preloader";
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -23,6 +25,8 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${poppins.variable} antialiased h-full`}>
       <body className="min-h-full flex flex-col bg-background text-foreground font-sans relative">
+        <Preloader />
+        <CustomCursor />
         <Header />
         <main className="flex-grow">
           {children}

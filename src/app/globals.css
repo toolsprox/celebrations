@@ -83,6 +83,14 @@
   body {
     @apply bg-background text-foreground;
   }
+  @media (pointer: fine) {
+    body {
+      cursor: none;
+    }
+    a, button, input, select, textarea, [role="button"] {
+      cursor: none !important;
+    }
+  }
 }
 
 @layer utilities {
