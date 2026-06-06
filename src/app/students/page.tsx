@@ -21,9 +21,9 @@ export default function StudentsPage() {
             <GraduationCap className="w-4 h-4" />
             <span className="text-[10px] font-bold uppercase tracking-widest">Student Exclusive</span>
           </div>
-          <h1 className="text-4xl md:text-6xl font-serif font-bold mb-6">Premium Indian Dining, <br/><span className="text-transparent bg-clip-text bg-gradient-to-r from-[#5CB800] to-[#7CFF01]">Student Prices.</span></h1>
+          <h1 className="text-4xl md:text-6xl font-serif font-bold mb-6">Premium Indian Dining, <br/><span className="text-transparent bg-clip-text bg-gradient-to-r from-[#5CB800] to-[#7CFF01]">With 15% Off.</span></h1>
           <p className="text-lg text-black/60 mb-8">
-            Looking for an affordable Indian restaurant in London without compromising on quality? Show your student ID and unlock exclusive discounts for you and your mates. Perfect for end-of-term celebrations or a quick, high-quality bite near UCL and King's College.
+            Looking for an affordable Indian restaurant in London without compromising on quality? Show your valid student ID and unlock an exclusive 15% discount for you and your mates. Perfect for end-of-term celebrations or a quick, high-quality bite near UCL and King's College.
           </p>
           <div className="flex justify-center gap-4">
             <Link href="/reserve?segment=student" className="bg-[#0F0F0F] text-white font-bold px-8 py-4 rounded-xl hover:bg-[#7CFF01] hover:text-black transition-all flex items-center shadow-lg">

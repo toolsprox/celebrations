@@ -112,6 +112,10 @@
     @apply bg-[#0F0F0F]/80 backdrop-blur-2xl border border-white/10 rounded-[30px] shadow-[0_30px_60px_rgba(0,0,0,0.2)];
   }
 
+  .glass-floating {
+    @apply bg-white/70 backdrop-blur-2xl border border-white/60 shadow-[0_10px_30px_rgba(0,0,0,0.05)];
+  }
+
   /* Deep layered shadows */
   .shadow-deep {
     box-shadow: 0 30px 60px -12px rgba(124, 255, 1, 0.15), 0 18px 36px -18px rgba(0, 0, 0, 0.1);
@@ -129,5 +133,40 @@
   .glow-orb {
     @apply absolute rounded-full blur-[100px] opacity-20 pointer-events-none;
     background: radial-gradient(circle, var(--primary) 0%, transparent 70%);
+  }
+
+  /* Hot Smoke Effect */
+  .smoke-container {
+    @apply absolute inset-0 pointer-events-none z-20 overflow-visible;
+  }
+  
+  .smoke {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background: radial-gradient(circle, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0) 70%);
+    border-radius: 50%;
+    filter: blur(15px);
+    opacity: 0;
+    animation: rise-and-fade 4s infinite ease-in;
+  }
+
+  .smoke:nth-child(1) { left: 30%; bottom: 20%; animation-delay: 0s; transform: scale(1); }
+  .smoke:nth-child(2) { left: 50%; bottom: 10%; animation-delay: 1.5s; transform: scale(1.5); }
+  .smoke:nth-child(3) { left: 70%; bottom: 30%; animation-delay: 0.8s; transform: scale(0.8); }
+  .smoke:nth-child(4) { left: 40%; bottom: 40%; animation-delay: 2.2s; transform: scale(1.2); }
+
+  @keyframes rise-and-fade {
+    0% {
+      transform: translateY(0) scale(1) rotate(0deg);
+      opacity: 0;
+    }
+    30% {
+      opacity: 0.6;
+    }
+    100% {
+      transform: translateY(-150px) scale(3) rotate(45deg);
+      opacity: 0;
+    }
   }
 }

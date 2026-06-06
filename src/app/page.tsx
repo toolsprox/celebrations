@@ -103,6 +103,12 @@ export default function Home() {
               transition={{ repeat: Infinity, duration: 35, ease: "linear" }}
               className="w-[85%] h-[85%] relative z-10 origin-center filter drop-shadow-[0_20px_30px_rgba(0,0,0,0.2)]"
             >
+              <div className="smoke-container">
+                <div className="smoke"></div>
+                <div className="smoke"></div>
+                <div className="smoke"></div>
+                <div className="smoke"></div>
+              </div>
               <Image
                 src="/images/hero_bbq_chicken.png"
                 alt="Signature Masakali Dish"
@@ -204,8 +210,8 @@ export default function Home() {
               <GraduationCap className="w-6 h-6" />
             </div>
             <h3 className="font-bold text-2xl mb-3 text-white relative z-10">Student Discount</h3>
-            <p className="text-white/60 text-sm mb-6 flex-1 relative z-10">Treat yourself to an elevated dining experience without breaking the bank. Show your student ID to claim.</p>
-            <Link href="/reserve" className="inline-flex items-center text-xs font-bold uppercase tracking-widest bg-white text-[#0F0F0F] px-4 py-2.5 rounded-lg group-hover:bg-[#7CFF01] transition-colors relative z-10">
+            <p className="text-white/60 text-sm mb-6 flex-1 relative z-10">Treat yourself to an elevated dining experience without breaking the bank. Show your student ID to claim a flat 15% off your bill.</p>
+            <Link href="/students" className="inline-flex items-center text-xs font-bold uppercase tracking-widest bg-white text-[#0F0F0F] px-4 py-2.5 rounded-lg group-hover:bg-[#7CFF01] transition-colors relative z-10">
               Claim Offer <ArrowRight className="w-4 h-4 ml-2" />
             </Link>
           </div>
@@ -255,6 +261,10 @@ export default function Home() {
                 )}
                 <div className="relative h-48 w-full rounded-2xl bg-[#FDFBF7] mb-6 flex items-center justify-center overflow-visible group-hover:bg-[#7CFF01]/5 transition-colors">
                    <motion.div animate={{ rotate: 360 }} transition={{ repeat: Infinity, duration: 50, ease: "linear" }} className="w-40 h-40 relative">
+                    <div className="smoke-container">
+                      <div className="smoke" style={{ animationDelay: '0.5s' }}></div>
+                      <div className="smoke" style={{ animationDelay: '2s' }}></div>
+                    </div>
                     <Image src={item.image} alt={item.name} fill className="object-contain mix-blend-multiply group-hover:scale-110 transition-transform duration-500" />
                    </motion.div>
                 </div>
