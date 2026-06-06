@@ -82,6 +82,13 @@
   }
   body {
     @apply bg-background text-foreground;
+    cursor: default !important;
+  }
+  a, button, [role="button"] {
+    cursor: pointer !important;
+  }
+  input, select, textarea {
+    cursor: text !important;
   }
 }
 
