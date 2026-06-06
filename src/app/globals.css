@@ -41,39 +41,38 @@
 
 @layer base {
   :root {
-    /* Very dark blue / Navy */
-    --background: #0A1128; 
-    --foreground: #f8fafc; /* Crisp white for text */
+    --background: #FDFBF7; 
+    --foreground: #0F0F0F;
 
     /* Glassmorphism base for cards */
-    --card: rgba(255, 255, 255, 0.03);
-    --card-foreground: #f8fafc;
+    --card: rgba(255, 255, 255, 0.4);
+    --card-foreground: #0F0F0F;
 
-    --popover: #0f172a;
-    --popover-foreground: #f8fafc;
+    --popover: #ffffff;
+    --popover-foreground: #0F0F0F;
 
     /* Bright Neon Green */
     --primary: #7CFF01; 
-    --primary-foreground: #0A1128;
+    --primary-foreground: #0F0F0F;
 
-    --secondary: #1e293b;
-    --secondary-foreground: #7CFF01;
+    --secondary: #e2e8f0;
+    --secondary-foreground: #0F0F0F;
 
-    --muted: #1e293b;
-    --muted-foreground: #94a3b8;
+    --muted: #f1f5f9;
+    --muted-foreground: #64748b;
 
     --accent: #7CFF01;
-    --accent-foreground: #0A1128;
+    --accent-foreground: #0F0F0F;
 
     --destructive: #ef4444;
     --destructive-foreground: #f8fafc;
 
     /* Subtle borders for glass */
-    --border: rgba(255, 255, 255, 0.1);
-    --input: rgba(255, 255, 255, 0.1);
+    --border: rgba(0, 0, 0, 0.05);
+    --input: rgba(0, 0, 0, 0.05);
     --ring: #7CFF01;
 
-    --radius: 1rem; /* Softer radius for modern look */
+    --radius: 1rem;
   }
 }
 
@@ -86,7 +85,6 @@
   }
 }
 
-/* Custom utility classes for premium feel */
 @layer utilities {
   .text-neon {
     color: var(--primary);
@@ -98,14 +96,31 @@
     border-color: var(--primary);
   }
   
-  /* Enhanced Glassmorphism styling */
+  /* Enhanced Premium Glassmorphism styling */
   .glass-card {
-    @apply bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl shadow-[0_8px_32px_0_rgba(0,0,0,0.37)];
+    @apply bg-white/40 backdrop-blur-2xl border border-white/60 rounded-[30px] shadow-[0_20px_40px_rgba(0,0,0,0.04),inset_0_1px_0_rgba(255,255,255,0.8)];
+  }
+  
+  .glass-card-dark {
+    @apply bg-[#0F0F0F]/80 backdrop-blur-2xl border border-white/10 rounded-[30px] shadow-[0_30px_60px_rgba(0,0,0,0.2)];
+  }
+
+  /* Deep layered shadows */
+  .shadow-deep {
+    box-shadow: 0 30px 60px -12px rgba(124, 255, 1, 0.15), 0 18px 36px -18px rgba(0, 0, 0, 0.1);
+  }
+
+  /* 3D Transform Utilities */
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+  .transform-style-3d {
+    transform-style: preserve-3d;
   }
   
   /* Glowing Orb background */
   .glow-orb {
-    @apply absolute rounded-full blur-[100px] opacity-40 mix-blend-screen pointer-events-none;
+    @apply absolute rounded-full blur-[100px] opacity-20 pointer-events-none;
     background: radial-gradient(circle, var(--primary) 0%, transparent 70%);
   }
 }

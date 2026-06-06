@@ -169,11 +169,11 @@ export default function Home() {
           {occasions.map((occ, idx) => (
             <Link key={idx} href={`/reserve?occasion=${occ.name.toLowerCase().replace(' ', '-')}`} className="group">
               <motion.div 
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: idx * 0.1 }}
-                className="bg-white rounded-3xl p-8 border border-black/5 shadow-[0_10px_30px_rgba(0,0,0,0.03)] hover:shadow-[0_20px_40px_rgba(124,255,1,0.15)] hover:border-[#7CFF01]/50 transition-all cursor-pointer h-full flex flex-col"
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ delay: idx * 0.1, duration: 0.8, type: "spring", bounce: 0.4 }}
+                className="glass-card p-8 hover:shadow-deep hover:border-[#7CFF01]/50 transition-all duration-500 cursor-pointer h-full flex flex-col perspective-1000 transform-style-3d hover:-translate-y-2"
               >
                 <div className="w-14 h-14 rounded-full bg-[#7CFF01]/10 flex items-center justify-center text-[#5CB800] mb-6 group-hover:scale-110 group-hover:bg-[#7CFF01] group-hover:text-black transition-all">
                   {occ.icon}
@@ -198,7 +198,7 @@ export default function Home() {
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
           {/* Student Discount */}
-          <div className="bg-[#0F0F0F] rounded-3xl p-8 border border-white/10 shadow-lg hover:border-[#7CFF01]/50 transition-all group flex flex-col items-start relative overflow-hidden">
+          <div className="glass-card-dark p-8 hover:shadow-deep hover:border-[#7CFF01]/50 transition-all duration-500 group flex flex-col items-start relative overflow-hidden perspective-1000 transform-style-3d hover:-translate-y-2">
             <div className="absolute -bottom-10 -left-10 w-32 h-32 bg-[#7CFF01] rounded-full blur-[60px] opacity-10 group-hover:opacity-30 transition-opacity"></div>
             <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center text-white mb-6 group-hover:bg-[#7CFF01] group-hover:text-black transition-colors relative z-10">
               <GraduationCap className="w-6 h-6" />
@@ -211,7 +211,7 @@ export default function Home() {
           </div>
 
           {/* Corporate */}
-          <div className="bg-white rounded-3xl p-8 border border-black/5 shadow-[0_10px_30px_rgba(0,0,0,0.03)] hover:shadow-[0_20px_40px_rgba(124,255,1,0.15)] hover:border-[#7CFF01]/50 transition-all group flex flex-col items-start relative overflow-hidden">
+          <div className="glass-card p-8 hover:shadow-deep hover:border-[#7CFF01]/50 transition-all duration-500 group flex flex-col items-start relative overflow-hidden perspective-1000 transform-style-3d hover:-translate-y-2">
              <div className="absolute -top-10 -right-10 w-32 h-32 bg-[#7CFF01] rounded-full blur-[60px] opacity-20 group-hover:opacity-40 transition-opacity"></div>
             <div className="w-12 h-12 rounded-full bg-[#7CFF01]/10 flex items-center justify-center text-[#5CB800] mb-6 group-hover:bg-[#7CFF01] group-hover:text-black transition-colors relative z-10">
               <Briefcase className="w-6 h-6" />
@@ -244,8 +244,9 @@ export default function Home() {
                 key={idx}
                 initial={{ opacity: 0, scale: 0.95 }}
                 whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                className="bg-white rounded-3xl p-6 border border-black/5 hover:border-[#7CFF01]/50 transition-colors group relative"
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.8, type: "spring", bounce: 0.4 }}
+                className="glass-card p-6 hover:shadow-deep hover:border-[#7CFF01]/50 transition-all duration-500 group relative perspective-1000 transform-style-3d hover:-translate-y-2"
               >
                 {item.popular && (
                   <div className="absolute top-4 right-4 bg-[#7CFF01] text-black text-[10px] font-bold uppercase tracking-widest px-3 py-1.5 rounded-full z-20 flex items-center shadow-lg">
@@ -276,7 +277,14 @@ export default function Home() {
         <h2 className="text-center text-3xl font-serif font-bold mb-12">Loved by Our Guests</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {reviews.map((review, idx) => (
-            <div key={idx} className="bg-white p-8 rounded-3xl border border-black/5 shadow-sm">
+            <motion.div 
+              key={idx} 
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ delay: idx * 0.15, duration: 0.8, type: "spring" }}
+              className="glass-card p-8 hover:shadow-deep transition-all duration-500 transform hover:-translate-y-2"
+            >
               <div className="flex text-[#7CFF01] mb-4">
                 {[...Array(review.rating)].map((_, i) => <Star key={i} className="w-5 h-5 fill-current" />)}
               </div>
@@ -285,7 +293,7 @@ export default function Home() {
                 <span className="font-bold">{review.name}</span>
                 <span className="text-xs text-black/40 font-bold uppercase tracking-widest">{review.platform}</span>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </section>

@@ -131,13 +131,7 @@ export default function BookingForm() {
 
               {/* Neumorphic + Glassmorphic Tablet */}
               <div 
-                className="relative w-full p-4 sm:p-6 md:p-8 rounded-[40px] flex flex-col items-center"
-                style={{
-                  background: 'rgba(253, 251, 247, 0.7)',
-                  backdropFilter: 'blur(20px)',
-                  boxShadow: '20px 20px 40px rgba(224, 222, 218, 0.7), -20px -20px 40px rgba(255, 255, 255, 1), inset 1px 1px 3px rgba(255, 255, 255, 0.8)',
-                  border: '1px solid rgba(255, 255, 255, 0.6)'
-                }}
+                className="relative w-full p-4 sm:p-6 md:p-8 rounded-[40px] flex flex-col items-center glass-card transform-style-3d hover:rotate-y-2 hover:-rotate-x-2 transition-all duration-700 hover:shadow-deep z-10 perspective-1000"
               >
                 {/* Neumorphic Handle */}
                 <div className="w-12 h-1.5 bg-[#e0deda] rounded-full mb-6 shadow-[inset_1px_1px_2px_rgba(0,0,0,0.1)]"></div>
