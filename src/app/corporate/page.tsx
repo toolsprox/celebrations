@@ -123,8 +123,11 @@ export default function CorporatePage() {
           <p className="text-black/60 text-lg">Tailored spaces for intimate meetings or full-scale corporate parties.</p>
         </div>
         
-        <div className="grid md:grid-cols-2 gap-8">
-          <motion.div whileHover={{ y: -10 }} className="group bg-white p-10 rounded-[2.5rem] shadow-sm hover:shadow-xl border border-black/5 transition-all">
+        <div className="md:hidden flex items-center justify-end mt-8 mb-[-2rem] text-[#7CFF01] font-bold text-xs uppercase tracking-widest animate-pulse relative z-20">
+          Swipe <ArrowRight className="w-3 h-3 ml-1" />
+        </div>
+        <div className="flex md:grid md:grid-cols-2 gap-6 md:gap-8 mt-16 relative overflow-x-auto snap-x snap-mandatory pb-8 -mx-4 px-4 md:overflow-visible md:snap-none md:pb-0 md:mx-0 md:px-0 [&::-webkit-scrollbar]:hidden">
+          <motion.div whileHover={{ y: -10 }} className="snap-center shrink-0 w-[85vw] md:w-auto group bg-white p-10 rounded-[2.5rem] shadow-sm hover:shadow-xl border border-black/5 transition-all">
             <div className="h-48 bg-[#F5F3EC] rounded-2xl mb-6 relative overflow-hidden group-hover:bg-[#7CFF01]/10 transition-colors flex items-center justify-center">
                <ShieldCheck className="w-16 h-16 text-[#5CB800] group-hover:scale-110 transition-transform" />
             </div>
@@ -136,7 +139,7 @@ export default function CorporatePage() {
             </ul>
           </motion.div>
           
-          <motion.div whileHover={{ y: -10 }} className="group bg-white p-10 rounded-[2.5rem] shadow-sm hover:shadow-xl border border-black/5 transition-all">
+          <motion.div whileHover={{ y: -10 }} className="snap-center shrink-0 w-[85vw] md:w-auto group bg-white p-10 rounded-[2.5rem] shadow-sm hover:shadow-xl border border-black/5 transition-all">
             <div className="h-48 bg-[#F5F3EC] rounded-2xl mb-6 relative overflow-hidden group-hover:bg-[#7CFF01]/10 transition-colors flex items-center justify-center">
                <Briefcase className="w-16 h-16 text-[#5CB800] group-hover:scale-110 transition-transform" />
             </div>

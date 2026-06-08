@@ -69,12 +69,15 @@ export default function CelebrationsPage() {
       </section>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-        <div className="grid md:grid-cols-3 gap-8 mt-16 text-left relative">
+        <div className="md:hidden flex items-center justify-end mt-8 mb-[-2rem] text-[#7CFF01] font-bold text-xs uppercase tracking-widest animate-pulse relative z-20">
+          Swipe <ArrowRight className="w-3 h-3 ml-1" />
+        </div>
+        <div className="flex md:grid md:grid-cols-3 gap-6 md:gap-8 mt-16 text-left relative overflow-x-auto snap-x snap-mandatory pb-8 -mx-4 px-4 md:overflow-visible md:snap-none md:pb-0 md:mx-0 md:px-0 [&::-webkit-scrollbar]:hidden">
           
           <motion.div 
             initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}
             whileHover={{ y: -10 }}
-            className="group bg-white p-12 rounded-[3rem] shadow-sm hover:shadow-xl transition-all border border-black/5 relative overflow-hidden"
+            className="snap-center shrink-0 w-[85vw] md:w-auto group bg-white p-12 rounded-[3rem] shadow-sm hover:shadow-xl transition-all border border-black/5 relative overflow-hidden"
           >
             <div className="w-16 h-16 bg-[#F5F3EC] rounded-full flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-[#7CFF01]/20 transition-all duration-300">
               <Users className="w-8 h-8 text-[#5CB800]" />
@@ -86,7 +89,7 @@ export default function CelebrationsPage() {
           <motion.div 
             initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.1 }}
             whileHover={{ y: -10 }}
-            className="group bg-white p-12 rounded-[3rem] shadow-sm hover:shadow-xl transition-all border border-black/5 relative overflow-hidden"
+            className="snap-center shrink-0 w-[85vw] md:w-auto group bg-white p-12 rounded-[3rem] shadow-sm hover:shadow-xl transition-all border border-black/5 relative overflow-hidden"
           >
             <div className="w-16 h-16 bg-[#F5F3EC] rounded-full flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-[#7CFF01]/20 transition-all duration-300">
               <Sparkles className="w-8 h-8 text-[#5CB800]" />
@@ -98,7 +101,7 @@ export default function CelebrationsPage() {
           <motion.div 
             initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.2 }}
             whileHover={{ y: -10 }}
-            className="group bg-[#0F0F0F] text-white p-12 rounded-[3rem] shadow-xl hover:shadow-[0_20px_40px_rgba(124,255,1,0.2)] transition-all relative overflow-hidden flex flex-col justify-between"
+            className="snap-center shrink-0 w-[85vw] md:w-auto group bg-[#0F0F0F] text-white p-12 rounded-[3rem] shadow-xl hover:shadow-[0_20px_40px_rgba(124,255,1,0.2)] transition-all relative overflow-hidden flex flex-col justify-between"
           >
             <motion.div 
               animate={{ rotate: 360 }} transition={{ duration: 20, repeat: Infinity, ease: "linear" }}

@@ -81,7 +81,10 @@ export default function StudentsPage() {
       </section>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid md:grid-cols-3 gap-8 mt-16 relative">
+        <div className="md:hidden flex items-center justify-end mt-8 mb-[-2rem] text-[#7CFF01] font-bold text-xs uppercase tracking-widest animate-pulse relative z-20">
+          Swipe <ArrowRight className="w-3 h-3 ml-1" />
+        </div>
+        <div className="flex md:grid md:grid-cols-3 gap-6 md:gap-8 mt-16 relative overflow-x-auto snap-x snap-mandatory pb-8 -mx-4 px-4 md:overflow-visible md:snap-none md:pb-0 md:mx-0 md:px-0 [&::-webkit-scrollbar]:hidden">
           <div className="absolute top-1/2 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-black/10 to-transparent -z-10 hidden md:block"></div>
           
           {[
@@ -93,7 +96,7 @@ export default function StudentsPage() {
               key={i}
               initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1, duration: 0.6 }}
               whileHover={{ y: -10 }}
-              className="group bg-white p-10 rounded-[2.5rem] shadow-sm hover:shadow-[0_20px_40px_rgba(0,0,0,0.06)] hover:border-[#7CFF01]/30 border border-black/5 transition-all relative overflow-hidden"
+              className="snap-center shrink-0 w-[85vw] md:w-auto group bg-white p-10 rounded-[2.5rem] shadow-sm hover:shadow-[0_20px_40px_rgba(0,0,0,0.06)] hover:border-[#7CFF01]/30 border border-black/5 transition-all relative overflow-hidden"
             >
               <div className="w-16 h-16 bg-[#7CFF01]/10 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-[#7CFF01] group-hover:scale-110 transition-all duration-300 transform group-hover:rotate-6">
                 <feature.icon className="w-8 h-8 text-[#5CB800] group-hover:text-black transition-colors" />
