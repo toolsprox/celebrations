@@ -105,28 +105,6 @@ export default function StudentsPage() {
         </div>
       </div>
 
-      {/* --- STUDENT FAVORITES MENU --- */}
-      <section className="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 border-t border-black/5 mt-16">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-serif font-bold mb-4 text-[#0F0F0F]">Student Favorites</h2>
-          <p className="text-black/60 text-lg">Delicious, filling, and budget-friendly with your 15% discount.</p>
-        </div>
-        <div className="grid md:grid-cols-3 gap-8">
-          {[
-            { name: "Butter Chicken Naan Wrap", price: "£12", discounted: "£10.20" },
-            { name: "Spicy Paneer Tikka Bowl", price: "£14", discounted: "£11.90" },
-            { name: "Lamb Seekh Kebab Plate", price: "£15", discounted: "£12.75" }
-          ].map((item, i) => (
-            <motion.div key={i} whileHover={{ y: -5 }} className="bg-white p-8 rounded-3xl border border-black/5 shadow-sm text-center">
-              <h3 className="font-serif font-bold text-xl mb-2">{item.name}</h3>
-              <div className="flex justify-center items-center gap-3">
-                <span className="line-through text-black/40">{item.price}</span>
-                <span className="font-bold text-[#5CB800] text-xl">{item.discounted}</span>
-              </div>
-            </motion.div>
-          ))}
-        </div>
-      </section>
 
       {/* --- HOW IT WORKS --- */}
       <section className="py-24 bg-[#0F0F0F] text-white relative z-10">

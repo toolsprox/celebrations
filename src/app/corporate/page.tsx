@@ -150,19 +150,7 @@ export default function CorporatePage() {
         </div>
       </section>
 
-      {/* --- TRUST SIGNALS --- */}
-      <section className="py-20 bg-[#F5F3EC] relative z-10 text-center">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-sm font-bold uppercase tracking-widest text-black/40 mb-8">Trusted by London's Leading Firms</p>
-          <div className="flex flex-wrap justify-center items-center gap-12 md:gap-24 opacity-60 grayscale">
-             {/* Mock Logos */}
-             <div className="text-2xl font-serif font-bold">Acme Corp</div>
-             <div className="text-2xl font-bold tracking-tighter">GLOBEX</div>
-             <div className="text-2xl font-serif italic">Initech</div>
-             <div className="text-2xl font-black">Stark Ind.</div>
-          </div>
-        </div>
-      </section>
+
 
       {/* --- FINAL CTA --- */}
       <section className="py-24 max-w-4xl mx-auto px-4 text-center relative z-10">
