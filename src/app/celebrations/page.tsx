@@ -3,7 +3,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
-import { CalendarHeart, ArrowRight, Users, Sparkles, Cake } from 'lucide-react'
+import { CalendarHeart, ArrowRight, Users, Sparkles, Cake, CheckCircle2, Star } from 'lucide-react'
 
 export default function CelebrationsPage() {
 
