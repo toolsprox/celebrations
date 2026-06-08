@@ -28,10 +28,12 @@ export default function PulseCTA({ href, children, className = "" }: { href: str
         className="absolute inset-0 rounded-2xl z-0 pointer-events-none"
       />
       
-      {/* Actual Button */}
-      <Link href={href} className={`relative z-10 block ${className}`}>
-        {children}
-      </Link>
+      {/* Actual Button with Tactile Squish on Tap */}
+      <motion.div whileTap={{ scale: 0.95 }} transition={{ type: "spring", stiffness: 400, damping: 17 }}>
+        <Link href={href} className={`relative z-10 block ${className}`}>
+          {children}
+        </Link>
+      </motion.div>
     </div>
   )
 }

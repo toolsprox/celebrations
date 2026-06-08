@@ -1,20 +1,27 @@
 import type { Metadata } from "next";
-import { Poppins } from "next/font/google";
+import { Poppins, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/shared/Header";
 import Footer from "@/components/shared/Footer";
 import Preloader from "@/components/shared/Preloader";
 import MobileCTA from "@/components/shared/MobileCTA";
+import TouchRipple from "@/components/shared/TouchRipple";
 
 const poppins = Poppins({
   variable: "--font-poppins",
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
+  weight: ["400", "500", "600", "700"],
+});
+
+const playfair = Playfair_Display({
+  variable: "--font-playfair",
+  subsets: ["latin"],
+  weight: ["400", "600", "700"],
 });
 
 export const metadata: Metadata = {
-  title: "Masakali | Elevated Indian Cuisine in London",
-  description: "Experience the royal flavors of India in a breathtaking, modern setting. Masakali offers premium Indian fine dining in the heart of London.",
+  title: "Masakali London | Modern Indian Dining",
+  description: "Experience the true taste of modern Indian cuisine in the heart of London.",
 };
 
 export default function RootLayout({
@@ -24,7 +31,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${poppins.variable} antialiased h-full`}>
-      <body className="min-h-full flex flex-col bg-background text-foreground font-sans relative">
+      <body className="min-h-full flex flex-col bg-background text-foreground font-sans relative cursor-pointer">
+        <TouchRipple />
         <Preloader />
         <Header />
         <main className="flex-grow">
