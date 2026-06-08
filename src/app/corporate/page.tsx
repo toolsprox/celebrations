@@ -4,6 +4,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { Briefcase, ArrowRight, CheckCircle2, ShieldCheck, GlassWater } from 'lucide-react'
+import PulseCTA from '@/components/shared/PulseCTA'
 
 export default function CorporatePage() {
   const listVariants = {
@@ -69,8 +70,8 @@ export default function CorporatePage() {
               ))}
             </motion.div>
 
-            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1 }} className="flex gap-4">
-              <Link href="/reserve?segment=corporate" className="group relative bg-[#0F0F0F] text-white font-bold px-10 py-5 rounded-2xl overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.1)] hover:shadow-[0_20px_40px_rgba(124,255,1,0.3)] transition-all">
+            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1 }} className="flex gap-4 mt-4">
+              <PulseCTA href="/reserve?segment=corporate" className="group relative bg-[#0F0F0F] text-white font-bold px-10 py-5 rounded-2xl overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.1)] hover:shadow-[0_20px_40px_rgba(124,255,1,0.3)] transition-all">
                 <span className="relative z-10 flex items-center">
                   Book Corporate Table <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
                 </span>
@@ -78,7 +79,7 @@ export default function CorporatePage() {
                 <span className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 text-black font-bold z-10">
                   Book Corporate Table <ArrowRight className="w-5 h-5 ml-2 translate-x-1" />
                 </span>
-              </Link>
+              </PulseCTA>
             </motion.div>
           </motion.div>
 

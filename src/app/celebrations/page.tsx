@@ -4,6 +4,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { CalendarHeart, ArrowRight, Users, Sparkles, Cake, CheckCircle2, Star } from 'lucide-react'
+import PulseCTA from '@/components/shared/PulseCTA'
 
 export default function CelebrationsPage() {
 
@@ -42,6 +43,18 @@ export default function CelebrationsPage() {
           <p className="text-xl text-black/60 mb-12 max-w-lg leading-relaxed">
             Whether it's a family reunion, a milestone birthday, or a weekend gathering, Masakali London is the perfect venue for large groups seeking the best Indian food in the city.
           </p>
+
+          <div className="flex gap-6 mt-4">
+            <PulseCTA href="/reserve?segment=celebrations" className="group relative bg-[#0F0F0F] text-white font-bold px-10 py-5 rounded-2xl overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.1)] hover:shadow-[0_20px_40px_rgba(124,255,1,0.3)] transition-all">
+              <span className="relative z-10 flex items-center">
+                Check Availability <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+              </span>
+              <div className="absolute inset-0 bg-gradient-to-r from-[#5CB800] to-[#7CFF01] transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-500"></div>
+              <span className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 text-black font-bold z-10">
+                Check Availability <ArrowRight className="w-5 h-5 ml-2 translate-x-1" />
+              </span>
+            </PulseCTA>
+          </div>
         </motion.div>
 
         {/* Right Column: Spinning Food */}
@@ -114,11 +127,18 @@ export default function CelebrationsPage() {
               </div>
               <h3 className="font-serif font-bold text-2xl mb-4 relative z-10">Book Your Event</h3>
               <p className="text-white/60 text-base mb-10 relative z-10">Weekends fill up fast. Secure your large group booking today.</p>
+              <div className="flex gap-6 mt-4">
+                <PulseCTA href="/reserve?segment=celebrations" className="group relative bg-[#0F0F0F] text-white font-bold px-10 py-5 rounded-2xl overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.1)] hover:shadow-[0_20px_40px_rgba(124,255,1,0.3)] transition-all">
+                  <span className="relative z-10 flex items-center">
+                    Check Availability <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+                  </span>
+                  <div className="absolute inset-0 bg-gradient-to-r from-[#5CB800] to-[#7CFF01] transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-500"></div>
+                  <span className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 text-black font-bold z-10">
+                    Check Availability <ArrowRight className="w-5 h-5 ml-2 translate-x-1" />
+                  </span>
+                </PulseCTA>
+              </div>
             </div>
-            
-            <Link href="/reserve?segment=celebrations" className="inline-flex items-center justify-center font-bold bg-[#7CFF01] text-black px-8 py-4 rounded-2xl hover:bg-white transition-colors relative z-10 overflow-hidden w-full group/btn">
-              <span className="relative z-10 flex items-center">Check Availability <ArrowRight className="w-5 h-5 ml-2 group-hover/btn:translate-x-1 transition-transform" /></span>
-            </Link>
           </motion.div>
         </div>
       </div>

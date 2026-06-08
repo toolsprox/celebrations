@@ -4,6 +4,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { GraduationCap, ArrowRight, MapPin, Star, Clock, Zap } from 'lucide-react'
+import PulseCTA from '@/components/shared/PulseCTA'
 
 export default function StudentsPage() {
 
@@ -43,8 +44,8 @@ export default function StudentsPage() {
             Looking for an affordable Indian restaurant in London without compromising on quality? Show your valid student ID and unlock an exclusive 15% discount for you and your mates.
           </p>
           
-          <div className="flex gap-6">
-            <Link href="/reserve?segment=student" className="group relative bg-[#0F0F0F] text-white font-bold px-10 py-5 rounded-2xl overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.1)] hover:shadow-[0_20px_40px_rgba(124,255,1,0.3)] transition-all">
+          <div className="flex gap-6 mt-4">
+            <PulseCTA href="/reserve?segment=student" className="group relative bg-[#0F0F0F] text-white font-bold px-10 py-5 rounded-2xl overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.1)] hover:shadow-[0_20px_40px_rgba(124,255,1,0.3)] transition-all">
               <span className="relative z-10 flex items-center">
                 Claim 15% Off Table <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
               </span>
@@ -52,7 +53,7 @@ export default function StudentsPage() {
               <span className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 text-black font-bold z-10">
                 Claim 15% Off Table <ArrowRight className="w-5 h-5 ml-2 translate-x-1" />
               </span>
-            </Link>
+            </PulseCTA>
           </div>
         </motion.div>
 
