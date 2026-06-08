@@ -104,6 +104,62 @@ export default function StudentsPage() {
           ))}
         </div>
       </div>
+
+      {/* --- STUDENT FAVORITES MENU --- */}
+      <section className="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 border-t border-black/5 mt-16">
+        <div className="text-center mb-16">
+          <h2 className="text-3xl md:text-5xl font-serif font-bold mb-4 text-[#0F0F0F]">Student Favorites</h2>
+          <p className="text-black/60 text-lg">Delicious, filling, and budget-friendly with your 15% discount.</p>
+        </div>
+        <div className="grid md:grid-cols-3 gap-8">
+          {[
+            { name: "Butter Chicken Naan Wrap", price: "£12", discounted: "£10.20" },
+            { name: "Spicy Paneer Tikka Bowl", price: "£14", discounted: "£11.90" },
+            { name: "Lamb Seekh Kebab Plate", price: "£15", discounted: "£12.75" }
+          ].map((item, i) => (
+            <motion.div key={i} whileHover={{ y: -5 }} className="bg-white p-8 rounded-3xl border border-black/5 shadow-sm text-center">
+              <h3 className="font-serif font-bold text-xl mb-2">{item.name}</h3>
+              <div className="flex justify-center items-center gap-3">
+                <span className="line-through text-black/40">{item.price}</span>
+                <span className="font-bold text-[#5CB800] text-xl">{item.discounted}</span>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </section>
+
+      {/* --- HOW IT WORKS --- */}
+      <section className="py-24 bg-[#0F0F0F] text-white relative z-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-3xl md:text-5xl font-serif font-bold mb-16">How to claim your discount</h2>
+          <div className="grid md:grid-cols-3 gap-12">
+            <div className="flex flex-col items-center">
+              <div className="w-16 h-16 rounded-full bg-[#7CFF01] text-black font-bold text-2xl flex items-center justify-center mb-6">1</div>
+              <h3 className="font-bold text-xl mb-2">Book a Table</h3>
+              <p className="text-white/60">Reserve your spot online using the dedicated student booking link.</p>
+            </div>
+            <div className="flex flex-col items-center">
+              <div className="w-16 h-16 rounded-full bg-[#7CFF01] text-black font-bold text-2xl flex items-center justify-center mb-6">2</div>
+              <h3 className="font-bold text-xl mb-2">Show Your ID</h3>
+              <p className="text-white/60">Flash your valid university or college student ID card to your server.</p>
+            </div>
+            <div className="flex flex-col items-center">
+              <div className="w-16 h-16 rounded-full bg-[#7CFF01] text-black font-bold text-2xl flex items-center justify-center mb-6">3</div>
+              <h3 className="font-bold text-xl mb-2">Enjoy 15% Off</h3>
+              <p className="text-white/60">The discount is automatically applied to your entire food bill.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* --- FINAL CTA --- */}
+      <section className="py-24 max-w-4xl mx-auto px-4 text-center relative z-10">
+        <h2 className="text-4xl md:text-6xl font-serif font-bold mb-6 text-[#0F0F0F]">Grab a Table Tonight</h2>
+        <p className="text-xl text-black/60 mb-10">Don't miss out on London's best Indian dining at student-friendly prices.</p>
+        <Link href="/reserve?segment=student" className="inline-flex items-center bg-[#0F0F0F] text-white font-bold text-lg px-12 py-5 rounded-2xl hover:bg-[#7CFF01] hover:text-black transition-all shadow-xl group">
+          Book Now & Save 15% <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+        </Link>
+      </section>
     </main>
   )
 }

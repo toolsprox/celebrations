@@ -115,6 +115,63 @@ export default function CorporatePage() {
           </motion.div>
         </div>
       </div>
+
+      {/* --- PRIVATE DINING SPACES --- */}
+      <section className="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 border-t border-black/5 mt-16">
+        <div className="text-center mb-16">
+          <h2 className="text-3xl md:text-5xl font-serif font-bold mb-4 text-[#0F0F0F]">Private Dining & Events</h2>
+          <p className="text-black/60 text-lg">Tailored spaces for intimate meetings or full-scale corporate parties.</p>
+        </div>
+        
+        <div className="grid md:grid-cols-2 gap-8">
+          <motion.div whileHover={{ y: -10 }} className="group bg-white p-10 rounded-[2.5rem] shadow-sm hover:shadow-xl border border-black/5 transition-all">
+            <div className="h-48 bg-[#F5F3EC] rounded-2xl mb-6 relative overflow-hidden group-hover:bg-[#7CFF01]/10 transition-colors flex items-center justify-center">
+               <ShieldCheck className="w-16 h-16 text-[#5CB800] group-hover:scale-110 transition-transform" />
+            </div>
+            <h3 className="font-serif font-bold text-2xl mb-2">The Executive Room</h3>
+            <p className="text-black/60 mb-4">Perfect for board meetings and intimate client dinners. Seats up to 12 guests with full privacy and dedicated service.</p>
+            <ul className="space-y-2 mb-6 text-sm text-black/80 font-medium">
+              <li className="flex items-center"><CheckCircle2 className="w-4 h-4 text-[#7CFF01] mr-2" /> AV Equipment Available</li>
+              <li className="flex items-center"><CheckCircle2 className="w-4 h-4 text-[#7CFF01] mr-2" /> Bespoke Tasting Menu</li>
+            </ul>
+          </motion.div>
+          
+          <motion.div whileHover={{ y: -10 }} className="group bg-white p-10 rounded-[2.5rem] shadow-sm hover:shadow-xl border border-black/5 transition-all">
+            <div className="h-48 bg-[#F5F3EC] rounded-2xl mb-6 relative overflow-hidden group-hover:bg-[#7CFF01]/10 transition-colors flex items-center justify-center">
+               <Briefcase className="w-16 h-16 text-[#5CB800] group-hover:scale-110 transition-transform" />
+            </div>
+            <h3 className="font-serif font-bold text-2xl mb-2">The Main Hall Buyout</h3>
+            <p className="text-black/60 mb-4">Host your company milestone or holiday party in our stunning main dining room. Accommodates up to 150 guests.</p>
+            <ul className="space-y-2 mb-6 text-sm text-black/80 font-medium">
+              <li className="flex items-center"><CheckCircle2 className="w-4 h-4 text-[#7CFF01] mr-2" /> Custom Floor Plans</li>
+              <li className="flex items-center"><CheckCircle2 className="w-4 h-4 text-[#7CFF01] mr-2" /> Open Bar Packages</li>
+            </ul>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* --- TRUST SIGNALS --- */}
+      <section className="py-20 bg-[#F5F3EC] relative z-10 text-center">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <p className="text-sm font-bold uppercase tracking-widest text-black/40 mb-8">Trusted by London's Leading Firms</p>
+          <div className="flex flex-wrap justify-center items-center gap-12 md:gap-24 opacity-60 grayscale">
+             {/* Mock Logos */}
+             <div className="text-2xl font-serif font-bold">Acme Corp</div>
+             <div className="text-2xl font-bold tracking-tighter">GLOBEX</div>
+             <div className="text-2xl font-serif italic">Initech</div>
+             <div className="text-2xl font-black">Stark Ind.</div>
+          </div>
+        </div>
+      </section>
+
+      {/* --- FINAL CTA --- */}
+      <section className="py-24 max-w-4xl mx-auto px-4 text-center relative z-10">
+        <h2 className="text-4xl md:text-6xl font-serif font-bold mb-6 text-[#0F0F0F]">Secure Your Corporate Booking</h2>
+        <p className="text-xl text-black/60 mb-10">Our events team will work with you to craft the perfect itinerary and menu for your clients or team.</p>
+        <Link href="/reserve?segment=corporate" className="inline-flex items-center bg-[#0F0F0F] text-white font-bold text-lg px-12 py-5 rounded-2xl hover:bg-[#7CFF01] hover:text-black transition-all shadow-xl group">
+          Enquire Now <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+        </Link>
+      </section>
     </main>
   )
 }

@@ -119,6 +119,68 @@ export default function CelebrationsPage() {
           </motion.div>
         </div>
       </div>
+
+      {/* --- EVENT PACKAGES --- */}
+      <section className="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 border-t border-black/5 mt-16">
+        <div className="text-center mb-16">
+          <h2 className="text-3xl md:text-5xl font-serif font-bold mb-4 text-[#0F0F0F]">Curated Celebration Packages</h2>
+          <p className="text-black/60 text-lg">Leave the planning to us. Choose a package that fits your occasion.</p>
+        </div>
+        
+        <div className="grid md:grid-cols-3 gap-8">
+          <motion.div whileHover={{ y: -10 }} className="group bg-white p-8 rounded-3xl shadow-sm border border-black/5 relative overflow-hidden transition-all">
+            <h3 className="font-serif font-bold text-2xl mb-2">The Birthday Feast</h3>
+            <p className="text-3xl font-bold text-[#5CB800] mb-4">£45 <span className="text-sm text-black/40 font-normal">/person</span></p>
+            <ul className="space-y-3 mb-8 text-black/70 text-sm">
+              <li className="flex items-center"><CheckCircle2 className="w-4 h-4 text-[#7CFF01] mr-2" /> 3-Course Sharing Menu</li>
+              <li className="flex items-center"><CheckCircle2 className="w-4 h-4 text-[#7CFF01] mr-2" /> Complimentary Birthday Dessert</li>
+              <li className="flex items-center"><CheckCircle2 className="w-4 h-4 text-[#7CFF01] mr-2" /> Table Decorations</li>
+            </ul>
+          </motion.div>
+
+          <motion.div whileHover={{ y: -10 }} className="group bg-[#0F0F0F] text-white p-8 rounded-3xl shadow-xl relative overflow-hidden transition-all transform scale-105">
+            <div className="absolute top-0 right-0 bg-[#7CFF01] text-black text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-bl-xl">Most Popular</div>
+            <h3 className="font-serif font-bold text-2xl mb-2">The Anniversary</h3>
+            <p className="text-3xl font-bold text-[#7CFF01] mb-4">£65 <span className="text-sm text-white/40 font-normal">/person</span></p>
+            <ul className="space-y-3 mb-8 text-white/70 text-sm">
+              <li className="flex items-center"><CheckCircle2 className="w-4 h-4 text-[#7CFF01] mr-2" /> Premium 4-Course Menu</li>
+              <li className="flex items-center"><CheckCircle2 className="w-4 h-4 text-[#7CFF01] mr-2" /> Glass of Champagne on Arrival</li>
+              <li className="flex items-center"><CheckCircle2 className="w-4 h-4 text-[#7CFF01] mr-2" /> Intimate Corner Booth Seating</li>
+            </ul>
+          </motion.div>
+
+          <motion.div whileHover={{ y: -10 }} className="group bg-white p-8 rounded-3xl shadow-sm border border-black/5 relative overflow-hidden transition-all">
+            <h3 className="font-serif font-bold text-2xl mb-2">Large Family Gatherings</h3>
+            <p className="text-3xl font-bold text-[#5CB800] mb-4">£35 <span className="text-sm text-black/40 font-normal">/person</span></p>
+            <ul className="space-y-3 mb-8 text-black/70 text-sm">
+              <li className="flex items-center"><CheckCircle2 className="w-4 h-4 text-[#7CFF01] mr-2" /> Family-Style Platters</li>
+              <li className="flex items-center"><CheckCircle2 className="w-4 h-4 text-[#7CFF01] mr-2" /> Kids Menu Included</li>
+              <li className="flex items-center"><CheckCircle2 className="w-4 h-4 text-[#7CFF01] mr-2" /> Private Section Option (20+ guests)</li>
+            </ul>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* --- SOCIAL PROOF --- */}
+      <section className="py-20 bg-white relative z-10 border-y border-black/5">
+        <div className="max-w-4xl mx-auto px-4 text-center">
+          <div className="flex justify-center mb-6">
+            {[1,2,3,4,5].map(i => <Star key={i} className="w-6 h-6 fill-[#5CB800] text-[#5CB800]" />)}
+          </div>
+          <h3 className="text-2xl md:text-3xl font-serif font-bold mb-4">"The absolute best place in London to celebrate!"</h3>
+          <p className="text-black/60 italic text-lg mb-4">"We booked a table for 15 for my husband's 40th birthday. The staff were incredibly accommodating, the food came out hot and all at once, and the atmosphere was electric. Highly recommend!"</p>
+          <p className="font-bold text-sm uppercase tracking-widest text-black/40">— Sarah Jenkins, Google Reviews</p>
+        </div>
+      </section>
+
+      {/* --- FINAL CTA --- */}
+      <section className="py-24 max-w-4xl mx-auto px-4 text-center relative z-10">
+        <h2 className="text-4xl md:text-6xl font-serif font-bold mb-6 text-[#0F0F0F]">Plan Your Celebration</h2>
+        <p className="text-xl text-black/60 mb-10">Weekends fill up quickly. Secure your large group booking today to avoid disappointment.</p>
+        <Link href="/reserve?segment=celebrations" className="inline-flex items-center bg-[#0F0F0F] text-white font-bold text-lg px-12 py-5 rounded-2xl hover:bg-[#7CFF01] hover:text-black transition-all shadow-xl group">
+          Book Your Event <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+        </Link>
+      </section>
     </main>
   )
 }
