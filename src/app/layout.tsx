@@ -6,6 +6,7 @@ import Footer from "@/components/shared/Footer";
 import Preloader from "@/components/shared/Preloader";
 import MobileCTA from "@/components/shared/MobileCTA";
 import TouchRipple from "@/components/shared/TouchRipple";
+import AmbientAura from "@/components/shared/AmbientAura";
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -31,11 +32,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${poppins.variable} antialiased h-full`}>
-      <body className="min-h-full flex flex-col bg-background text-foreground font-sans relative cursor-pointer">
+      <body className="min-h-full flex flex-col bg-background text-foreground font-sans relative cursor-pointer overflow-x-hidden">
+        <AmbientAura />
         <TouchRipple />
         <Preloader />
         <Header />
-        <main className="flex-grow">
+        <main className="flex-grow z-10 relative">
           {children}
         </main>
         <Footer />
