@@ -51,8 +51,29 @@ export default function Header() {
             <span className="text-[10px] sm:text-xs tracking-[0.2em] text-[#7CFF01] uppercase font-bold italic -mt-1">London.</span>
           </Link>
 
+          {/* Ad Landing Page Dynamic Center Badge */}
+          {isAdLandingPage && (
+            <div className="hidden lg:flex items-center absolute left-1/2 -translate-x-1/2 bg-white/50 backdrop-blur-md px-6 py-2 rounded-full border border-black/5 shadow-sm">
+              {pathname === '/students' && (
+                <span className="text-sm font-bold tracking-widest uppercase text-[#0F0F0F] flex items-center gap-2">
+                  <span className="text-xl">🎓</span> 15% Student Discount Active
+                </span>
+              )}
+              {pathname === '/corporate' && (
+                <span className="text-sm font-bold tracking-widest uppercase text-[#0F0F0F] flex items-center gap-2">
+                  <span className="text-xl">💼</span> Priority Corporate Booking
+                </span>
+              )}
+              {pathname === '/celebrations' && (
+                <span className="text-sm font-bold tracking-widest uppercase text-[#0F0F0F] flex items-center gap-2">
+                  <span className="text-xl">🎉</span> Group Packages Available
+                </span>
+              )}
+            </div>
+          )}
+
           {/* Desktop Nav */}
-          <nav className="hidden md:flex items-center gap-8">
+          <nav className="hidden md:flex items-center gap-8 z-50">
             {!isAdLandingPage && navLinks.map((link) => (
               <Link 
                 key={link.name} 
