@@ -44,19 +44,19 @@ export default function Footer() {
           <h4 className="text-xs font-bold tracking-widest text-[#0F0F0F] uppercase">Contact</h4>
           <ul className="space-y-4">
             <li>
-              <a href="tel:+442071234567" className="flex items-center gap-3 text-sm text-[#0F0F0F]/70 hover:text-[#0F0F0F] transition-colors group">
+              <a href="tel:+442074199999" className="flex items-center gap-3 text-sm text-[#0F0F0F]/70 hover:text-[#0F0F0F] transition-colors group">
                 <div className="p-2 rounded-full bg-white/50 group-hover:bg-[#7CFF01] transition-colors">
                   <Phone className="w-4 h-4 text-[#0F0F0F]" />
                 </div>
-                +44 20 7123 4567
+                +44 20 7419 9999
               </a>
             </li>
             <li>
-              <a href="mailto:info@masakali.co.uk" className="flex items-center gap-3 text-sm text-[#0F0F0F]/70 hover:text-[#0F0F0F] transition-colors group">
+              <a href="mailto:masakalireservations@gmail.com" className="flex items-center gap-3 text-sm text-[#0F0F0F]/70 hover:text-[#0F0F0F] transition-colors group">
                 <div className="p-2 rounded-full bg-white/50 group-hover:bg-[#7CFF01] transition-colors">
                   <Mail className="w-4 h-4 text-[#0F0F0F]" />
                 </div>
-                info@masakali.co.uk
+                masakalireservations@gmail.com
               </a>
             </li>
             <li>
@@ -64,7 +64,7 @@ export default function Footer() {
                 <div className="p-2 rounded-full bg-white/50 group-hover:bg-[#7CFF01] transition-colors shrink-0">
                   <MapPin className="w-4 h-4 text-[#0F0F0F]" />
                 </div>
-                <span className="leading-relaxed">Stanhope<br />London</span>
+                <span className="leading-relaxed">48 Stanhope St<br />London NW1 3EX<br />United Kingdom</span>
               </a>
             </li>
           </ul>
