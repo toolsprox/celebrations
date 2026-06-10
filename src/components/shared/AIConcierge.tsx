@@ -1,4 +1,4 @@
-﻿'use client'
+'use client'
 
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
@@ -57,7 +57,7 @@ export default function AIConcierge() {
       } else if (lowerText.includes('park')) {
         aiResponse = "Good newsâ€”there is free street parking right near the restaurant after 6:30 PM! Shall I help you book a table for tonight?"
       } else if (lowerText.includes('birthday') || lowerText.includes('celebrat') || lowerText.includes('anniversary')) {
-        aiResponse = "I love a good celebration! ðŸŽ‰ If you book now and mention it in the notes, our chef will prepare a complimentary signature dessert with a sparkler for you. Let's get that reserved!"
+        aiResponse = "I love a good celebration! 🎉 If you book now and mention it in the notes, our chef will prepare a complimentary signature dessert with a sparkler for you. Let's get that reserved!"
       } else if (lowerText.includes('book') || lowerText.includes('reserv') || lowerText.includes('table')) {
         aiResponse = "Perfect! You can reserve your table instantly through OpenTable by clicking the green button right below this chat."
       } else if (lowerText.includes('hello') || lowerText.includes('hi') || lowerText.includes('hey')) {
