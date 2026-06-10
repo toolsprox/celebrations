@@ -1,4 +1,4 @@
-﻿'use client'
+'use client'
 
 import Image from 'next/image'
 import Link from 'next/link'
@@ -64,20 +64,22 @@ export default function CelebrationsPage() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="w-full md:w-[45%] relative flex justify-center items-center mt-12 md:mt-0"
         >
-          <div className="w-full max-w-[500px] aspect-square relative flex items-center justify-center">
-            {/* Ambient Glow */}
-            <div className="absolute inset-0 bg-[#7CFF01] rounded-full blur-[100px] opacity-10 pointer-events-none scale-110"></div>
-            
-            <motion.div animate={{ rotate: 360 }} transition={{ repeat: Infinity, duration: 45, ease: "linear" }} className="w-[85%] h-[85%] relative z-10 origin-center filter drop-shadow-[0_20px_30px_rgba(0,0,0,0.15)]">
-              <div className="smoke-container">
-                <div className="smoke"></div>
-                <div className="smoke"></div>
-                <div className="smoke"></div>
-                <div className="smoke"></div>
-              </div>
-              <Image src="/images/user_upload_1.png" alt="Signature Sharing Platter" fill className="object-contain" priority />
-            </motion.div>
-          </div>
+          <div className="w-full max-w-[500px] aspect-square relative flex items-center justify-center p-8 md:p-12">
+              {/* Subtle Dashed Ring */}
+              <motion.div 
+                animate={{ rotate: 360 }} 
+                transition={{ repeat: Infinity, duration: 120, ease: "linear" }}
+                className="absolute inset-0 md:inset-4 rounded-full border-[1.5px] border-dashed border-black/15 pointer-events-none"
+              ></motion.div>
+              
+              <motion.div 
+                animate={{ rotate: 360 }} 
+                transition={{ repeat: Infinity, duration: 45, ease: "linear" }} 
+                className="w-full h-full relative z-10 origin-center filter drop-shadow-[0_15px_30px_rgba(0,0,0,0.12)] rounded-full"
+              >
+                <Image src="/images/user_upload_1.png" alt="Signature Sharing Platter" fill className="object-contain" priority />
+              </motion.div>
+            </div>
         </motion.div>
       </section>
 
